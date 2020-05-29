@@ -2,7 +2,7 @@
   width: 100%;
   height: auto;
   background: #1c1c1c;
-  padding: 0 20px;
+  padding: 0 180px;
   box-sizing: border-box;
 }
 
@@ -36,7 +36,7 @@
 
   .rmdb-tmdb-logo {
     display: inline-block;
-    width:80px;
+    width: 80px;
     margin-top: 0px;
   }
 

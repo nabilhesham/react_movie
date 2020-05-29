@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was Created with React it's like IMDB but with react at the front end and a movie api at the back end
 
 ## Available Scripts
 
