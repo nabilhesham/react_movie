@@ -1,3 +1,7 @@
+.rmdb-moviethumb {
+  transition: all 0.3s ease-in-out;
+}
+
 .rmdb-moviethumb img {
   width: 500px;
   height: auto;
@@ -11,6 +15,10 @@
   cursor: pointer;
 }
 
-.clickable:hover {
-  opacity: 0.8;
+.rmdb-moviethumb.clickable:hover {
+  opacity: 1;
 }
+
+/* .rmdb-moviethumb:hover {
+  transform: scale(1.1);
+} */

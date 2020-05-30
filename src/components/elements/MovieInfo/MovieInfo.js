@@ -40,7 +40,7 @@ function MovieInfo(props) {
               value={props.movie.vote_average * 10}
             ></meter>
             <p className="rmdb-score">{props.movie.vote_average}</p>
-            <FontAwesome className="fa-star" name="star" size="1x" />
+            <FontAwesome className="fa-star" name="star" />
           </div>
           {props.directors.length > 1 ? <h3>DIRECTORS</h3> : <h3>DIRECTOR</h3>}
           {props.directors.map((director, i) => {

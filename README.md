@@ -14,7 +14,7 @@ it's an api to fetch movies from the database [Movies DB Api](https://api.themov
 6. Circuler Loader & Load More Movies Btn.
 7. FontAwesome Icons .
 
-## Steps to start the app
+## Steps to start the app :
 
 In the project directory, you can run:
 
@@ -28,7 +28,7 @@ This step to install all the dependencies for the app to run by react.
 
 Runs the app in the development mode.<br />
 
-## Dependencies LIST:-
+## Dependencies LIST :
 
 1. React
 2. React-Dom
@@ -36,7 +36,7 @@ Runs the app in the development mode.<br />
 4. React-Router-Dom
 5. React-Scripts
 
-## Learn More
+## Learn More :
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
