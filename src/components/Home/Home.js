@@ -29,11 +29,17 @@ export class Home extends Component {
   };
 
   componentDidMount() {
-    this.setState({ loading: true });
+    // Check localStorage
+    if (localStorage.getItem("HomeState")) {
+      const state = JSON.parse(localStorage.getItem("HomeState"));
+      this.setState({ ...state });
+    } else {
+      this.setState({ loading: true });
 
-    // Fetch the popular movies
-    const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-    this.fetchItems(endpoint);
+      // Fetch the popular movies
+      const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+      this.fetchItems(endpoint);
+    }
   }
 
   searchItems = (searchTerm) => {
@@ -74,13 +80,22 @@ export class Home extends Component {
       .then((data) => {
         // random number 1:10 of the popular movies
         const ranNum = Math.floor(Math.random() * 10) + 1;
-        this.setState({
-          movies: [...this.state.movies, ...data.results],
-          heroImage: this.state.heroImage || data.results[ranNum],
-          loading: false,
-          currentPage: data.page,
-          totalPages: data.total_pages,
-        });
+        this.setState(
+          {
+            // set the movies to the state
+            movies: [...this.state.movies, ...data.results],
+            heroImage: this.state.heroImage || data.results[ranNum],
+            loading: false,
+            currentPage: data.page,
+            totalPages: data.total_pages,
+          },
+          () => {
+            // Set the localStorage
+            if (this.state.searchTerm === "") {
+              localStorage.setItem("HomeState", JSON.stringify(this.state));
+            }
+          }
+        );
       })
       .catch((err) => console.error("Error: ", err));
   };

@@ -20,10 +20,24 @@ export class Movie extends Component {
   };
 
   componentDidMount() {
-    this.setState({ loading: true });
-    // fetch the movie
-    const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
-    this.fetchItems(endpoint);
+    // check the movie in the localstorage
+    if (
+      localStorage.getItem(
+        `${this.props.location.movieName} - ${this.props.match.params.movieId}`
+      )
+    ) {
+      const state = JSON.parse(
+        localStorage.getItem(
+          `${this.props.location.movieName} - ${this.props.match.params.movieId}`
+        )
+      );
+      this.setState({ ...state });
+    } else {
+      this.setState({ loading: true });
+      // fetch the movie
+      const endpoint = `${API_URL}movie/${this.props.match.params.movieId}?api_key=${API_KEY}&language=en-US`;
+      this.fetchItems(endpoint);
+    }
   }
 
   fetchItems = (endpoint) => {
@@ -42,11 +56,20 @@ export class Movie extends Component {
                 const directors = data.crew.filter(
                   (member) => member.job === "Director"
                 );
-                this.setState({
-                  actors: data.cast,
-                  directors: directors,
-                  loading: false,
-                });
+                this.setState(
+                  {
+                    actors: data.cast,
+                    directors: directors,
+                    loading: false,
+                  },
+                  () => {
+                    // set the movie to localStorage
+                    localStorage.setItem(
+                      `${this.props.location.movieName} - ${this.props.match.params.movieId}`,
+                      JSON.stringify(this.state)
+                    );
+                  }
+                );
               });
           });
         }

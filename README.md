@@ -1,4 +1,5 @@
-This project was Created with React it's like IMDB but with react at the front end and a movie api at the back end
+This project was Created with React it's like IMDB but with react at the front end and a movie api at the back end .
+This project uses PropTypes and LocalStorage .
 
 ## The Movie Api
 
