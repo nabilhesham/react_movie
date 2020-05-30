@@ -1,6 +1,10 @@
 This project was Created with React it's like IMDB but with react at the front end and a movie api at the back end .
 This project uses PropTypes and LocalStorage .
 
+## Deployment :
+
+this app is deployed on Heroku and it's [Link](https://react--movie.herokuapp.com/) .
+
 ## The Movie Api
 
 it's an api to fetch movies from the database [Movies DB Api](https://api.themoviedb.org/) and it's [Movie BD documentation](https://developers.themoviedb.org/3/getting-started/introduction).
