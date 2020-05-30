@@ -94,6 +94,7 @@ export class Home extends Component {
               image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${this.state.heroImage.backdrop_path}`}
               title={this.state.heroImage.original_title}
               text={this.state.heroImage.overview}
+              movieId={this.state.heroImage.id}
             />
             <SearchBar callback={this.searchItems} />
           </div>

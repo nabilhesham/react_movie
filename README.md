@@ -8,10 +8,11 @@ it's an api to fetch movies from the database [Movies DB Api](https://api.themov
 
 1. Header : Holds the logos of the app .
 2. Center Image : that changes randomly of the movies and it's overview .
-3. Search bar
-4. List of movies
-5. seperate page for each movie
-6. circuler loader & load more movies btn.
+3. Search bar: make search automaticlly after 5 secs.
+4. List of movies : display popular movies from the Movie DB Api.
+5. Seperate page for each Movie : holds the movie data, actors and rating
+6. Circuler Loader & Load More Movies Btn.
+7. FontAwesome Icons .
 
 ## Steps to start the app
 
